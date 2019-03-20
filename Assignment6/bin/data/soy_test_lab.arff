@@ -1,0 +1,407 @@
+%
+% Notes: The large soybean database (soybean-large-data.arff) and it's 
+%        corresponding test database (soybean-large-test.arff) combined
+%        into a single file (soybean-large.arff).
+%
+% 1. Title: Large Soybean Database
+% 
+% 2. Sources:
+%      (a) R.S. Michalski and R.L. Chilausky "Learning by Being Told and
+%          Learning from Examples: An Experimental Comparison of the Two
+% 	 Methods of Knowledge Acquisition in the Context of Developing
+% 	 an Expert System for Soybean Disease Diagnosis", International
+% 	 Journal of Policy Analysis and Information Systems, Vol. 4,
+% 	 No. 2, 1980.
+%      (b) Donor: Ming Tan & Jeff Schlimmer (Jeff.Schlimmer%cs.cmu.edu)
+%      (c) Date: 11 July 1988
+% 
+% 3. Past Usage:
+%     1. See above.
+%     2. Tan, M., & Eshelman, L. (1988). Using weighted networks to represent
+%        classification knowledge in noisy domains.  Proceedings of the Fifth
+%        International Conference on Machine Learning (pp. 121-134). Ann Arbor,
+%         Michigan: Morgan Kaufmann.
+%         -- IWN recorded a 97.1% classification accuracy 
+%            -- 290 training and 340 test instances
+%      3. Fisher,D.H. & Schlimmer,J.C. (1988). Concept Simplification and
+%         Predictive Accuracy. Proceedings of the Fifth
+%         International Conference on Machine Learning (pp. 22-28). Ann Arbor,
+%         Michigan: Morgan Kaufmann.
+%         -- Notes why this database is highly predictable
+% 
+% 4. Relevant Information Paragraph:
+%     There are 19 classes, only the first 15 of which have been used in prior
+%     work.  The folklore seems to be that the last four classes are
+%     unjustified by the data since they have so few examples.
+%     There are 35 categorical attributes, some nominal and some ordered.  The
+%     value ``dna'' means does not apply.  The values for attributes are
+%     encoded numerically, with the first value encoded as ``0,'' the second as
+%     ``1,'' and so forth.  An unknown values is encoded as ``?''.
+% 
+% 5. Number of Instances: 683
+% 
+% 6. Number of Attributes: 35 (all have been nominalized)
+% 
+% 7. Attribute Information: 
+%    -- 19 Classes
+%     diaporthe-stem-canker, charcoal-rot, rhizoctonia-root-rot,
+%     phytophthora-rot, brown-stem-rot, powdery-mildew,
+%     downy-mildew, brown-spot, bacterial-blight,
+%     bacterial-pustule, purple-seed-stain, anthracnose,
+%     phyllosticta-leaf-spot, alternarialeaf-spot,
+%     frog-eye-leaf-spot, diaporthe-pod-&-stem-blight,
+%     cyst-nematode, 2-4-d-injury, herbicide-injury.	
+%
+%    1. date:		april,may,june,july,august,september,october,?.
+%    2. plant-stand:	normal,lt-normal,?.
+%    3. precip:		lt-norm,norm,gt-norm,?.
+%    4. temp:		lt-norm,norm,gt-norm,?.
+%    5. hail:		yes,no,?.
+%    6. crop-hist:	diff-lst-year,same-lst-yr,same-lst-two-yrs,
+%                        same-lst-sev-yrs,?.
+%    7. area-damaged:	scattered,low-areas,upper-areas,whole-field,?.
+%    8. severity:	minor,pot-severe,severe,?.
+%    9. seed-tmt:	none,fungicide,other,?.
+%   10. germination:	'90-100%','80-89%','lt-80%',?.
+%   11. plant-growth:	norm,abnorm,?.
+%   12. leaves:		norm,abnorm.
+%   13. leafspots-halo:	absent,yellow-halos,no-yellow-halos,?.
+%   14. leafspots-marg:	w-s-marg,no-w-s-marg,dna,?.
+%   15. leafspot-size:	lt-1/8,gt-1/8,dna,?.
+%   16. leaf-shread:	absent,present,?.
+%   17. leaf-malf:	absent,present,?.
+%   18. leaf-mild:	absent,upper-surf,lower-surf,?.
+%   19. stem:		norm,abnorm,?.
+%   20. lodging:    	yes,no,?.
+%   21. stem-cankers:	absent,below-soil,above-soil,above-sec-nde,?.
+%   22. canker-lesion:	dna,brown,dk-brown-blk,tan,?.
+%   23. fruiting-bodies:	absent,present,?.
+%   24. external decay:	absent,firm-and-dry,watery,?.
+%   25. mycelium:	absent,present,?.
+%   26. int-discolor:	none,brown,black,?.
+%   27. sclerotia:	absent,present,?.
+%   28. fruit-pods:	norm,diseased,few-present,dna,?.
+%   29. fruit spots:	absent,colored,brown-w/blk-specks,distort,dna,?.
+%   30. seed:		norm,abnorm,?.
+%   31. mold-growth:	absent,present,?.
+%   32. seed-discolor:	absent,present,?.
+%   33. seed-size:	norm,lt-norm,?.
+%   34. shriveling:	absent,present,?.
+%   35. roots:		norm,rotted,galls-cysts,?.
+@RELATION soybean
+
+@ATTRIBUTE class {diaporthe-stem-canker,charcoal-rot,rhizoctonia-root-rot,phytophthora-rot,brown-stem-rot,powdery-mildew,downy-mildew,brown-spot,bacterial-blight,bacterial-pustule,purple-seed-stain,anthracnose,phyllosticta-leaf-spot,alternarialeaf-spot,frog-eye-leaf-spot,diaporthe-pod-&-stem-blight,cyst-nematode,2-4-d-injury,herbicide-injury}
+
+@DATA
+bacterial-pustule
+phyllosticta-leaf-spot
+phyllosticta-leaf-spot
+phytophthora-rot
+phytophthora-rot
+alternarialeaf-spot
+frog-eye-leaf-spot
+rhizoctonia-root-rot
+brown-stem-rot
+phytophthora-rot
+2-4-d-injury
+bacterial-pustule
+brown-spot
+phytophthora-rot
+alternarialeaf-spot
+phytophthora-rot
+phytophthora-rot
+bacterial-pustule
+brown-spot
+bacterial-pustule
+phytophthora-rot
+phytophthora-rot
+herbicide-injury
+brown-stem-rot
+powdery-mildew
+brown-spot
+anthracnose
+phytophthora-rot
+phytophthora-rot
+brown-stem-rot
+alternarialeaf-spot
+brown-stem-rot
+brown-spot
+alternarialeaf-spot
+phytophthora-rot
+phytophthora-rot
+brown-spot
+cyst-nematode
+phytophthora-rot
+charcoal-rot
+rhizoctonia-root-rot
+frog-eye-leaf-spot
+anthracnose
+diaporthe-stem-canker
+frog-eye-leaf-spot
+alternarialeaf-spot
+2-4-d-injury
+phyllosticta-leaf-spot
+phytophthora-rot
+alternarialeaf-spot
+brown-stem-rot
+anthracnose
+rhizoctonia-root-rot
+alternarialeaf-spot
+phyllosticta-leaf-spot
+downy-mildew
+purple-seed-stain
+bacterial-blight
+brown-stem-rot
+brown-spot
+powdery-mildew
+frog-eye-leaf-spot
+phyllosticta-leaf-spot
+brown-spot
+anthracnose
+brown-spot
+brown-spot
+phytophthora-rot
+brown-spot
+diaporthe-stem-canker
+phyllosticta-leaf-spot
+brown-stem-rot
+charcoal-rot
+charcoal-rot
+phytophthora-rot
+frog-eye-leaf-spot
+alternarialeaf-spot
+anthracnose
+alternarialeaf-spot
+downy-mildew
+brown-stem-rot
+phytophthora-rot
+powdery-mildew
+bacterial-pustule
+frog-eye-leaf-spot
+diaporthe-pod-&-stem-blight
+alternarialeaf-spot
+phyllosticta-leaf-spot
+frog-eye-leaf-spot
+downy-mildew
+diaporthe-pod-&-stem-blight
+brown-spot
+phytophthora-rot
+phytophthora-rot
+downy-mildew
+anthracnose
+anthracnose
+alternarialeaf-spot
+phytophthora-rot
+anthracnose
+alternarialeaf-spot
+frog-eye-leaf-spot
+frog-eye-leaf-spot
+frog-eye-leaf-spot
+bacterial-blight
+rhizoctonia-root-rot
+bacterial-pustule
+frog-eye-leaf-spot
+frog-eye-leaf-spot
+2-4-d-injury
+phyllosticta-leaf-spot
+anthracnose
+frog-eye-leaf-spot
+phytophthora-rot
+frog-eye-leaf-spot
+frog-eye-leaf-spot
+herbicide-injury
+purple-seed-stain
+herbicide-injury
+purple-seed-stain
+diaporthe-pod-&-stem-blight
+anthracnose
+alternarialeaf-spot
+brown-spot
+rhizoctonia-root-rot
+powdery-mildew
+purple-seed-stain
+anthracnose
+brown-spot
+bacterial-blight
+purple-seed-stain
+alternarialeaf-spot
+purple-seed-stain
+brown-stem-rot
+cyst-nematode
+anthracnose
+brown-spot
+charcoal-rot
+phytophthora-rot
+2-4-d-injury
+frog-eye-leaf-spot
+phytophthora-rot
+brown-spot
+alternarialeaf-spot
+brown-spot
+frog-eye-leaf-spot
+alternarialeaf-spot
+purple-seed-stain
+frog-eye-leaf-spot
+brown-spot
+bacterial-blight
+alternarialeaf-spot
+diaporthe-pod-&-stem-blight
+brown-stem-rot
+phyllosticta-leaf-spot
+frog-eye-leaf-spot
+alternarialeaf-spot
+cyst-nematode
+powdery-mildew
+diaporthe-stem-canker
+anthracnose
+frog-eye-leaf-spot
+diaporthe-stem-canker
+anthracnose
+brown-spot
+phytophthora-rot
+rhizoctonia-root-rot
+brown-stem-rot
+alternarialeaf-spot
+frog-eye-leaf-spot
+anthracnose
+frog-eye-leaf-spot
+alternarialeaf-spot
+frog-eye-leaf-spot
+alternarialeaf-spot
+alternarialeaf-spot
+alternarialeaf-spot
+purple-seed-stain
+diaporthe-stem-canker
+phytophthora-rot
+bacterial-blight
+alternarialeaf-spot
+phytophthora-rot
+purple-seed-stain
+brown-spot
+phytophthora-rot
+phytophthora-rot
+downy-mildew
+phytophthora-rot
+brown-spot
+anthracnose
+diaporthe-stem-canker
+brown-spot
+anthracnose
+phytophthora-rot
+alternarialeaf-spot
+diaporthe-stem-canker
+alternarialeaf-spot
+alternarialeaf-spot
+frog-eye-leaf-spot
+rhizoctonia-root-rot
+alternarialeaf-spot
+downy-mildew
+alternarialeaf-spot
+powdery-mildew
+anthracnose
+brown-spot
+phytophthora-rot
+brown-spot
+alternarialeaf-spot
+alternarialeaf-spot
+anthracnose
+brown-spot
+diaporthe-pod-&-stem-blight
+alternarialeaf-spot
+alternarialeaf-spot
+brown-stem-rot
+phytophthora-rot
+alternarialeaf-spot
+brown-stem-rot
+downy-mildew
+frog-eye-leaf-spot
+frog-eye-leaf-spot
+brown-spot
+brown-spot
+brown-spot
+alternarialeaf-spot
+frog-eye-leaf-spot
+anthracnose
+brown-spot
+bacterial-pustule
+phyllosticta-leaf-spot
+anthracnose
+cyst-nematode
+diaporthe-pod-&-stem-blight
+alternarialeaf-spot
+charcoal-rot
+phytophthora-rot
+brown-stem-rot
+alternarialeaf-spot
+diaporthe-stem-canker
+downy-mildew
+brown-spot
+alternarialeaf-spot
+frog-eye-leaf-spot
+frog-eye-leaf-spot
+phytophthora-rot
+anthracnose
+frog-eye-leaf-spot
+brown-stem-rot
+alternarialeaf-spot
+powdery-mildew
+brown-spot
+alternarialeaf-spot
+frog-eye-leaf-spot
+bacterial-pustule
+powdery-mildew
+frog-eye-leaf-spot
+alternarialeaf-spot
+charcoal-rot
+phytophthora-rot
+brown-spot
+herbicide-injury
+diaporthe-stem-canker
+brown-spot
+brown-stem-rot
+brown-stem-rot
+anthracnose
+phytophthora-rot
+charcoal-rot
+brown-spot
+phytophthora-rot
+diaporthe-pod-&-stem-blight
+frog-eye-leaf-spot
+frog-eye-leaf-spot
+brown-stem-rot
+alternarialeaf-spot
+bacterial-blight
+phytophthora-rot
+anthracnose
+frog-eye-leaf-spot
+phytophthora-rot
+downy-mildew
+phytophthora-rot
+phytophthora-rot
+frog-eye-leaf-spot
+anthracnose
+bacterial-pustule
+phytophthora-rot
+anthracnose
+phyllosticta-leaf-spot
+anthracnose
+alternarialeaf-spot
+brown-stem-rot
+brown-stem-rot
+alternarialeaf-spot
+bacterial-blight
+phytophthora-rot
+phytophthora-rot
+brown-stem-rot
+downy-mildew
+cyst-nematode
+rhizoctonia-root-rot
+cyst-nematode
+rhizoctonia-root-rot
+2-4-d-injury
+rhizoctonia-root-rot
+purple-seed-stain
+brown-spot
+brown-stem-rot
+alternarialeaf-spot
+cyst-nematode
